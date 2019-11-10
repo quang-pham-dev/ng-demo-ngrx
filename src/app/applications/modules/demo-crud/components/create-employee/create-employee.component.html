@@ -1,0 +1,35 @@
+<div class="tb-data">
+  <div class="tb-data-header">
+    Add Employee
+  </div>
+  <div class="tb-data-body">
+      <div class="form-group">
+        <label>
+          ID
+        </label>
+        <input type="text" class="form-control" [(ngModel)]="employee.empl_id">
+      </div>
+      <div class="form-group">
+        <label>
+          Name
+        </label>
+        <input type="text" class="form-control" [(ngModel)]="employee.empl_name">
+      </div>
+      <div class="form-group">
+        <label>
+          Account
+        </label>
+        <input type="text" class="form-control" [(ngModel)]="employee.account">
+      </div>
+      <div class="form-group">
+        <label>
+          Phone number
+        </label>
+        <input type="text" class="form-control" [(ngModel)]="employee.phone_number">
+      </div>
+      <div class="float-right">
+          <button class="btn btn-success" (click)="executeAdd()">Add</button>
+          <button class="btn">Cancel</button>
+      </div>
+  </div>
+</div>
