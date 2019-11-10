@@ -1,0 +1,13 @@
+<search-member [isLoading]="isLoading"></search-member>
+<ng-container *ngIf="membersList">
+    <search-member-result [membersList]="membersList"></search-member-result>
+</ng-container>
+<ng-template #createMemberForm>
+    <create-member ></create-member>
+</ng-template>
+<ng-template #deleteMemberForm>
+    <delete-member [memberListInfo]="memberListInfo"></delete-member>
+</ng-template>
+<ng-template #updateMemberForm>
+    <update-member [memberListInfo]="memberListInfo"></update-member>
+</ng-template>

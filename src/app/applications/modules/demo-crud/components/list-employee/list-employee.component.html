@@ -1,0 +1,64 @@
+<div class="tb-data">
+  <div class="tb-data-header">List Employee</div>
+  <div class="tb-data-body">
+    <select class="form-control mt-2" style="width: 70px;" (change)="pageSizeChanges(pageSize.value)" #pageSize>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+    <table class="table table-bordered table-hover table-striped mt-2">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Account</th>
+          <th>Phone Number</th>
+          <th></th>
+        </tr>
+      </thead>
+      <ng-container *ngIf="isLoading; else elseBlock">
+        <span class="h4 text-danger">Loading...</span>
+      </ng-container>
+      <ng-template #elseBlock>
+        <tbody>
+          <ng-template ngFor let-employee [ngForOf]="employees" let-index="index + 1">
+            <ng-container *ngIf="index >= paging.startItem && index <= paging.endItem">
+              <tr>
+                <td>{{index}}</td>
+                <td>{{employee.empl_id}}</td>
+                <td>{{employee.empl_name}}</td>
+                <td>{{employee.account}}</td>
+                <td>{{employee.phone_number}}</td>
+                <td>
+                  <button class="btn btn-warning">Update</button>
+                  <button class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            </ng-container>
+          </ng-template>
+        </tbody>
+      </ng-template>
+    </table>
+    <ng-container *ngIf="paging">
+      <div class="float-left">
+        <span class="h6">Show from {{paging.startItem}} to {{paging.endItem}} of {{paging.totalItems}}</span>
+      </div>
+      <div class="float-right">
+        <ul class="pagination">
+          <ng-container *ngIf="paging.currentPage > 1">
+            <li class="page-item"><a class="page-link my-hover" (click)="prevPage()"><</a>
+            </li>
+          </ng-container>
+          <ng-template ngFor let-page [ngForOf]="paging.pages">
+            <li class="page-item"><a class="page-link my-hover" [ngClass]="{'text-white': paging.currentPage === page, 'bg-primary': paging.currentPage === page}"
+                (click)="selectPage(page)">{{page}}</a></li>
+          </ng-template>
+          <ng-container *ngIf="paging.currentPage < paging.totalPages">
+            <li class="page-item"><a class="page-link my-hover" (click)="nextPage()">></a></li>
+          </ng-container>
+        </ul>
+      </div>
+    </ng-container>
+  </div>
+</div>

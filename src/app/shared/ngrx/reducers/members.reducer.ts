@@ -1,0 +1,34 @@
+// import { INIT_APPLICATION_STATE } from '../states/application.state';
+import * as lodash from "lodash";
+import {
+    ApplicationAction,
+    MEMBERS_ACTIONS,
+    INIT_STATE
+} from '../actions/application.action';
+
+const ACTIONS = [
+    MEMBERS_ACTIONS.FECTCH_MEMBERS,
+    MEMBERS_ACTIONS.FECTCH_MEMBERS_SUCCESS,
+    MEMBERS_ACTIONS.FECTCH_MEMBERS_ERROR,
+    MEMBERS_ACTIONS.CREATE_MEMBERS,
+    MEMBERS_ACTIONS.CREATE_MEMBERS_SUCCESS,
+    MEMBERS_ACTIONS.CREATE_MEMBERS_ERROR,
+    MEMBERS_ACTIONS.OPEN_MODAL_CREATE,
+    MEMBERS_ACTIONS.OPEN_MODAL_DELETE,
+    MEMBERS_ACTIONS.CLOSE_MODAL_CREATE,
+    MEMBERS_ACTIONS.CLOSE_MODAL_DELETE,
+    MEMBERS_ACTIONS.DELETE_MEMBERS,
+    MEMBERS_ACTIONS.DELETE_MEMBERS_SUCCESS,
+    MEMBERS_ACTIONS.DELETE_MEMBERS_ERROR,
+    MEMBERS_ACTIONS.OPEN_MODAL_UPDATE,
+    MEMBERS_ACTIONS.CLOSE_MODAL_UPDATE,
+    MEMBERS_ACTIONS.RESET_STATE
+
+]
+export function membersReducer(state = INIT_STATE, action: ApplicationAction): ApplicationAction {
+    if (lodash.includes(ACTIONS, action.type)) {
+        return Object.assign(action);
+    } else {
+        return state;
+    }
+}

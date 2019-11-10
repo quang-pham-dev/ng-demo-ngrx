@@ -1,0 +1,20 @@
+<!-- <ng-container *ngIf="memberListSelected"> -->
+<div class="modal-body">
+  <div class="confirm-title-c">
+    <h3 class="confirm-title">
+      Delete Member !
+    </h3>
+  </div>
+  <div class="confirm-content">
+    <div class="row">
+      <div class="col-sm-12">
+        Do you want delete this account:&nbsp; {{memberListInfo.account}}
+      </div>
+    </div>
+  </div>
+  <div class="confirm-footer float-right">
+    <button class="btn btn-light margin-bottom-15" (click)="onCloseModalDelete()">Close</button>
+    <button class="btn btn-primary margin-bottom-15" (click)="onDeleteMember()">Delete</button>
+  </div>
+</div>
+<!-- </ng-container> -->

@@ -1,0 +1,49 @@
+<div class="messages-block block">
+  <div class="block-head">
+    <div class="block-head__caption">
+      <div class="block-head__title">
+        <h3 class="block-head__title-text">
+          Search
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="loader" [hidden]="!isLoading"></div>
+  <div class="block-body">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label class="form-control-label">Full Name</label>
+          <input type="text" placeholder="Enter..." class="form-control" [(ngModel)]="member.full_name">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label class="form-control-label">Phone</label>
+          <input type="text" placeholder="Enter..." class="form-control" [(ngModel)]="member.phone_number">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label class="form-control-label">Account</label>
+          <input type="text" placeholder="Enter..." class="form-control" [(ngModel)]="member.account">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="block-footer">
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-light float-right margin-right-10" (click)="onClear()">
+					<i class="fa fa-arrow-left"></i>Reset Form
+          </button>
+        <button class="btn btn-primary float-right margin-right-10" (click)="onSearch()">
+				  <i class="fa fa-search "></i> Search
+				</button>
+        <button class="btn btn-primary float-right margin-right-10" (click)="onOpenModalCreate()">
+			  	<i class=""></i> Create
+				</button>
+      </div>
+    </div>
+  </div>
+</div>

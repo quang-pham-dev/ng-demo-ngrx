@@ -1,0 +1,82 @@
+<!-- The Modal -->
+<div class="modal-content">
+  <!-- Modal Header -->
+  <div class="modal-header">
+    <div class="row">
+      <div class="col-md-auto padding-right-0">
+        <div class="block-head__caption">
+          <div class="block-head__title">
+            <h3 class="block-head__title-text">Create Member</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+  </div>
+
+  <!-- Modal body -->
+  <div class="modal-body">
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label class="padding-top-8">Name</label>
+      </div>
+      <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="membersList.full_name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label class="padding-top-8">Acount</label>
+      </div>
+      <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="membersList.acount">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label class="padding-top-8">Date of Birth</label>
+      </div>
+      <div class="col-md-8">
+        <input class="form-control" placeholder="dd-mm-yy" [(ngModel)]="membersList.date_of_birth">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label class="padding-top-8">Gender</label>
+      </div>
+      <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="membersList.gender">
+      </div>
+      <!-- <div class="col-md-8">
+        <select class="width-per-100 form-control">
+          <option>--</option>
+          <option>FerMale</option>
+          <option>Male</option>
+        </select>
+      </div> -->
+    </div>
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label class="padding-top-8">Phone Number</label>
+      </div>
+      <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="membersList.phone_number">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label class="padding-top-8">Marital Status</label>
+      </div>
+      <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="membersList.marital_status">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal footer -->
+  <div class="modal-footer">
+    <button class="btn btn-light" (click)="onCloseModalCreate()">Close</button>
+    <button class="btn btn-primary" (click)="onCreateMember()">Create</button>
+  </div>
+
+</div>
